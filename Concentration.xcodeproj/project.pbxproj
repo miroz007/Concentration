@@ -12,6 +12,8 @@
 		5A146E3221631D3D00E5E414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A146E3021631D3D00E5E414 /* Main.storyboard */; };
 		5A146E3421631D3D00E5E414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A146E3321631D3D00E5E414 /* Assets.xcassets */; };
 		5A146E3721631D3D00E5E414 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A146E3521631D3D00E5E414 /* LaunchScreen.storyboard */; };
+		5A546406216538F8004C274F /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A546405216538F8004C274F /* Concentration.swift */; };
+		5A546408216539D7004C274F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A546407216539D7004C274F /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		5A146E3321631D3D00E5E414 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A146E3621631D3D00E5E414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A146E3821631D3D00E5E414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A546405216538F8004C274F /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		5A546407216539D7004C274F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,32 @@
 		5A146E2B21631D3D00E5E414 /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
-				5A146E2C21631D3D00E5E414 /* AppDelegate.swift */,
 				5A146E2E21631D3D00E5E414 /* ViewController.swift */,
+				5AF3ADD221659A3200C46193 /* Model */,
 				5A146E3021631D3D00E5E414 /* Main.storyboard */,
-				5A146E3321631D3D00E5E414 /* Assets.xcassets */,
-				5A146E3521631D3D00E5E414 /* LaunchScreen.storyboard */,
+				5A146E3E21631DC300E5E414 /* Supporting Files */,
 				5A146E3821631D3D00E5E414 /* Info.plist */,
 			);
 			path = Concentration;
+			sourceTree = "<group>";
+		};
+		5A146E3E21631DC300E5E414 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A146E2C21631D3D00E5E414 /* AppDelegate.swift */,
+				5A146E3321631D3D00E5E414 /* Assets.xcassets */,
+				5A146E3521631D3D00E5E414 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AF3ADD221659A3200C46193 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A546407216539D7004C274F /* Card.swift */,
+				5A546405216538F8004C274F /* Concentration.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,11 +113,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Amir Samir";
 				TargetAttributes = {
 					5A146E2821631D3D00E5E414 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +161,8 @@
 			files = (
 				5A146E2F21631D3D00E5E414 /* ViewController.swift in Sources */,
 				5A146E2D21631D3D00E5E414 /* AppDelegate.swift in Sources */,
+				5A546406216538F8004C274F /* Concentration.swift in Sources */,
+				5A546408216539D7004C274F /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +202,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -184,6 +210,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -234,6 +261,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -241,6 +269,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -280,7 +309,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Miroz007.Concentration;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -295,7 +324,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Miroz007.Concentration;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
