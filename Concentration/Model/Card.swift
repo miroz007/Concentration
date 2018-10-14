@@ -1,17 +1,19 @@
-//
-//  Card.swift
-//  Concentration
-//
-//  Created by Amir Samir on 10/3/18.
-//  Copyright © 2018 Amir Samir. All rights reserved.
-//
 
 import Foundation
 
-struct Card {
+struct Card: Hashable
+
+
+{
+    var hashValue: Int {return identifier}
+    
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+    
     var isFaceUp = false
     var isMatched = false
-    var identifier: Int
+    private var identifier: Int
     
     private static var identifierFactory = 0
     
