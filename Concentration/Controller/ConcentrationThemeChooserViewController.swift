@@ -8,13 +8,31 @@
 
 import UIKit
 
-class ConcentrationThemeChooserViewController: UIViewController {
+class ConcentrationThemeChooserViewController: UIViewController , UISplitViewControllerDelegate {
     
     let Themes = [
         "Sports": "⚽️🏈🏓🥊",
         "Animals": "🐶🐴🐠🐥",
         "Faces": "😍😭😡😳",
         ]
+    
+    override func awakeFromNib() {
+        splitViewController?.delegate = self
+    }
+    
+    func splitViewController
+        (_ splitViewController: UISplitViewController,
+         collapseSecondary secondaryViewController: UIViewController,
+         onto primaryViewController: UIViewController) -> Bool {
+        if let cvc = secondaryViewController as? ConcentrationViewController {
+            if cvc.theme == nil {
+                return true
+            }
+        }
+        return false
+    }
+    
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
