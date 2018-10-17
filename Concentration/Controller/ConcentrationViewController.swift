@@ -13,18 +13,40 @@ class ConcentrationViewController: UIViewController {
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
-        return (cardButtons.count + 1) / 2
+        return (visiableCardButtons.count + 1) / 2
     }
     
     private(set) var flipCount = 0 {
-        didSet { flipCountLabel.text = "Flips: \(flipCount)" }
+        didSet { flipCountLabel.text = traitCollection.verticalSizeClass == .compact ?
+            "Flips:\n\(flipCount)" : "Flips: \(flipCount)" }
+    }
+    
+    func updateFlipCount(){
+        flipCountLabel.text = traitCollection.verticalSizeClass == .compact ?
+            "Flips:\n\(flipCount)" : "Flips: \(flipCount)"
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateFlipCount()
     }
     
     @IBOutlet private weak var flipCountLabel: UILabel!
+    
     @IBOutlet private var cardButtons: [UIButton]!
+    
+    private var visiableCardButtons : [UIButton]! {
+        return cardButtons?.filter {!$0.superview!.isHidden}
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateViewFromModel()
+    }
+    
     @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
-        if let cardNumber = cardButtons.index(of: sender){
+        if let cardNumber = visiableCardButtons.index(of: sender){
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
         }else {
@@ -33,9 +55,9 @@ class ConcentrationViewController: UIViewController {
     }
     
     private func updateViewFromModel(){
-        if cardButtons != nil {
-            for index in cardButtons.indices {
-                let button = cardButtons[index]
+        if visiableCardButtons != nil {
+            for index in visiableCardButtons.indices {
+                let button = visiableCardButtons[index]
                 let card = game.cards[index]
                 if card.isFaceUp {
                     button.setTitle(emoji(for: card) , for: UIControl.State.normal)
