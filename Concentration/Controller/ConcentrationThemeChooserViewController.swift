@@ -17,6 +17,7 @@ class ConcentrationThemeChooserViewController: UIViewController , UISplitViewCon
         ]
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         splitViewController?.delegate = self
     }
     
